@@ -1,0 +1,17 @@
+﻿@model ZeebeBscProj.Models.WorkerModels.ZeebeWorkerModel
+
+@{
+    ViewData["Title"] = "View";
+}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4 >Create Zeebe Worker service</h4>
+            @await Html.PartialAsync("WorkerForm", Model)
+        </div>
+        <div class="col">
+            <h4>Deployed workers</h4>
+            @await Component.InvokeAsync("ListOfWorker")
+        </div>
+    </div>
+</div>

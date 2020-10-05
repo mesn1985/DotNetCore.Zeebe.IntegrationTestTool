@@ -1,0 +1,39 @@
+﻿@using ZeebeBscProj.Models.TopologyRequestModels
+@model IEnumerable<ZeebeBscProj.Models.TopologyRequestModels.ZeebeBroker>
+
+<div class="container">
+    <h5 class="border border-primary rounded">Total Brokers in cluster @Model.Count()</h5>
+
+
+    @foreach (var broker in @Model)
+    {
+        <div class="container border border-primary">
+            <div class="row">
+                <div class="col-sm">Broker Hosted on Node with ID: @broker.NodeId </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">Hosted On: @broker.HostedOn</div>
+                <div class="col-sm">Address: @broker.Adresse</div>
+                <div class="col-sm">Number of Partitions: @broker.Partitions.Count()</div>
+            </div>
+            <h6 class="border border-dark">Partions On the Broker:</h6>
+            @foreach (var partion in broker.Partitions)
+            {
+                <div class="row">
+                    <div class="col-sm">Partition ID: @partion.Id</div>
+                    <div class="col-sm">Partion Role: @partion.Type.ToString()</div>
+                    <div class="col-sm"></div>
+                </div>
+            }
+
+        </div>
+    }
+
+
+
+
+
+
+
+
+</div>

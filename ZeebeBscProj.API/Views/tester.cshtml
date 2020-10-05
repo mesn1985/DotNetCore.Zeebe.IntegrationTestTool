@@ -1,0 +1,64 @@
+﻿@model ZeebeBscProj.Models.WorkerModels.ZeebeWorkerModel
+
+<h4>ZeebeWorkerModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="tester">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobType" class="control-label"></label>
+                <input asp-for="JobType" class="form-control" />
+                <span asp-validation-for="JobType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxActiveJobs" class="control-label"></label>
+                <input asp-for="MaxActiveJobs" class="form-control" />
+                <span asp-validation-for="MaxActiveJobs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PollIntervalSeconds" class="control-label"></label>
+                <input asp-for="PollIntervalSeconds" class="form-control" />
+                <span asp-validation-for="PollIntervalSeconds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeOutSeconds" class="control-label"></label>
+                <input asp-for="TimeOutSeconds" class="form-control" />
+                <span asp-validation-for="TimeOutSeconds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobDurationTimeMilliSeconds" class="control-label"></label>
+                <input asp-for="JobDurationTimeMilliSeconds" class="form-control" />
+                <span asp-validation-for="JobDurationTimeMilliSeconds" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ShouldCompleteSuccesfully" /> @Html.DisplayNameFor(model => model.ShouldCompleteSuccesfully)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobCompleteArgumentName" class="control-label"></label>
+                <input asp-for="JobCompleteArgumentName" class="form-control" />
+                <span asp-validation-for="JobCompleteArgumentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobCompleteArgumentValue" class="control-label"></label>
+                <input asp-for="JobCompleteArgumentValue" class="form-control" />
+                <span asp-validation-for="JobCompleteArgumentValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

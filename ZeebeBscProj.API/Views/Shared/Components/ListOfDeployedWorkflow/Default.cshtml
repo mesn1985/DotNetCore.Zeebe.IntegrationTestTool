@@ -1,0 +1,44 @@
+﻿@using ZeebeBscProj.Models.WorkFlowModels
+@model IEnumerable<ZeebeBscProj.Models.WorkFlowModels.DeployedWorkFlowModel>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Version)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProccesId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkFlowKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RescourceName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Version)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProccesId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkFlowKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RescourceName)
+            </td>
+            <td>
+               @await Html.PartialAsync("WorkFlowInstanceRequestForm",new WorkFlowInstanceRequest {BpmnProcessId = item.ProccesId})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
