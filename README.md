@@ -1,4 +1,6 @@
-# DotNetCore.Zeebe.IntegrationTestTool
+#Is not maintained
+
+## DotNetCore.Zeebe.IntegrationTestTool
 A ASP.Net core application for ad-hoc integration  testing  against a Zeebe Cluster.
 
 To use:
